@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="fetchDashboard()">
+    <nav>
+        <div class="nav-left">
+            <span>Welcome, <span id="username">Loading...</span></span> 
+            <span>| Credits: <span id="credits">0</span></span>
+        </div>
+        <div class="nav-right">
+            <button id="requestCreditsBtn" onclick="openDialog('creditsDialog')">Request More Credits</button>
+            <button id="approveRequestsBtn" style="display: none;" onclick="redirectToApproveRequests()">Approve Requests</button>
+            <button id="homebtn" onclick="redirectToHome()">Home</button>
+            <button id="logoutBtn" onclick="logout()">Logout</button>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Admin Dashboard</h1>
+
+        <h2>Scans Per User Per Day</h2>
+<label for="scanDatePicker">Select Date:</label>
+<input type="date" id="scanDatePicker" onchange="handleDateChange()">
+<table>
+    <thead>
+        <tr>
+            <th>User ID</th>
+            <th>Username</th>
+            <th>Scan Date</th>
+            <th>Scan Count</th>
+        </tr>
+    </thead>
+    <tbody id="scansTableBody"></tbody>
+</table>
+        <h2>Top Users</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>User ID</th>
+                    <th>Username</th>
+                    <th>Scan Count</th>
+                    <th>Credits</th>
+                </tr>
+            </thead>
+            <tbody id="topUsersTableBody"></tbody>
+        </table>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Approve Requests</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="fetchCreditRequests()">
+    <nav>
+        <div class="nav-left">
+        </div>
+        <div class="nav-right">
+            <button id="homebtn" onclick="redirectToHome()">Home</button>
+            <button id="dashboardBtn" onclick="redirectToDashboard()">Dashboard</button>
+            <button id="logoutBtn" onclick="logout()">Logout</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Approve Credit Requests</h2>
+        <table id="creditRequestsTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>Requested Credits</th>
+                    <th>Requested At</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="creditRequestsBody"></tbody>
+        </table>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+</html>

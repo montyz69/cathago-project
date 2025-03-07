@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="fetchUserProfile()">
+
+    <nav>
+        <div class="nav-left">
+            <span>Welcome, <span id="username">Loading...</span></span> 
+            <span> | Credits: 
+                <span id="credits" class="credits-box">0</span>
+            </span>
+        </div>
+        
+        <div class="nav-right">
+            <button id="requestCreditsBtn" onclick="openDialog('creditsDialog')">Request More Credits</button>
+            <button id="approveRequestsBtn" style="display: none;" onclick="redirectToApproveRequests()">Approve Requests</button>
+            <button id="dashboardBtn" onclick="redirectToDashboard()" style="display: none;">Dashboard</button>
+            <button id="logoutBtn" onclick="logout()">Logout</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Stored Documents</h2>
+        <div class="button-group">
+            <button id="addStoreDocumentBtn" onclick="openDialog('UploadDialog')" style="display: none;">Upload Document</button>
+            <button id="scanDocumentsBtn" onclick="openDialog('scanDialog')">Scan Documents</button>
+        </div>
+        <table id="documentsTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Document Name</th>
+                    <th>Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="documentsBody"></tbody>
+        </table>
+    </div>
+
+    <div class="container">
+        <h2>Matched Documents</h2>
+        <table id="matchedDocumentsTable" style="display: none;">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>File Name</th>
+                    <th>Similarity</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="matchedDocumentsBody"></tbody>
+        </table>
+    </div>
+    
+    <!-- Scan Dialog -->
+    <div id="scanDialog" class="dialog">
+        <div class="dialog-content">
+            <h3>Scan Document</h3>
+            <input type="file" id="fileInput">
+            <button id="scanDocumentsBtn" onclick="scanDocument()">Scan</button>
+            <div id="scanLoader" class="loader" style="display: none;"></div>
+            <button id="cancelScanBtn" onclick="closeDialog('scanDialog')">Cancel</button>
+        </div>
+    </div>
+    
+
+    <!-- Upload Dialog -->
+    <div id="UploadDialog" class="dialog">
+        <div class="dialog-content">
+            <h3>Upload Document</h3>
+            <input type="file" id="uploadfileInput">
+            <button id="UploadBtn" onclick="uploadDocument()">Upload</button>
+            <button id="cancelUploadBtn" onclick="closeDialog('UploadDialog')">Cancel</button>
+        </div>
+    </div>
+
+    <!-- Request Credits Dialog -->
+    <div id="creditsDialog" class="dialog">
+        <div class="dialog-content">
+            <h3>Request More Credits</h3>
+            <input type="number" id="creditsInput" placeholder="Enter credits">
+            <button id="requestCreditsBtn" onclick="requestCredits()">Request</button>
+            <button id="cancelCreditsBtn" onclick="closeDialog('creditsDialog')">Cancel</button>
+        </div>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+</html>
