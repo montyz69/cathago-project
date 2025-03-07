@@ -10,7 +10,7 @@ The project consists of three main folders:
 
 ### 1. Clone the Repository
 ```sh
-git clone <repository-url>
+git clone https://github.com/montyz69/cathago-project.git
 ```
 
 ### 2. Navigate to the Project Directory
