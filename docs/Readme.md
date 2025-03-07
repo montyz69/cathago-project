@@ -54,7 +54,7 @@ Register three users: one admin and two regular users.
 ## Watch the Testing Process
 
 If you want to watch a step-by-step demonstration, check out my YouTube video:\
-[Watch Here](link)
+[Watch Here](https://youtu.be/BprCBUsasSY)
 
 ## Detailed Documentation
 
