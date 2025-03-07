@@ -24,7 +24,7 @@ nav {
 .nav-left {
     display: flex;
     align-items: center;
-    gap: 8px; /* Adds spacing between elements */
+    gap: 8px;
 }
 
 button {
@@ -47,6 +47,9 @@ button:hover {
 }
 
 #scanDocumentsBtn {
+    background-color: #ffc107;
+}
+#scanDocumentsBtnin {
     background-color: #ffc107;
 }
 

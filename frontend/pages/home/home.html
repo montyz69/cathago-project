@@ -15,7 +15,6 @@
                 <span id="credits" class="credits-box">0</span>
             </span>
         </div>
-        
         <div class="nav-right">
             <button id="requestCreditsBtn" onclick="openDialog('creditsDialog')">Request More Credits</button>
             <button id="approveRequestsBtn" style="display: none;" onclick="redirectToApproveRequests()">Approve Requests</button>
@@ -63,7 +62,7 @@
         <div class="dialog-content">
             <h3>Scan Document</h3>
             <input type="file" id="fileInput">
-            <button id="scanDocumentsBtn" onclick="scanDocument()">Scan</button>
+            <button id="scanDocumentsBtnin" onclick="scanDocument()">Scan</button>
             <div id="scanLoader" class="loader" style="display: none;"></div>
             <button id="cancelScanBtn" onclick="closeDialog('scanDialog')">Cancel</button>
         </div>
@@ -90,6 +89,6 @@
         </div>
     </div>
 
-    <script src="../script.js"></script>
+    <script src="./script.js"></script>
 </body>
 </html>
